@@ -1,11 +1,12 @@
 {
-  "name": "learnstorybook-design-system-template",
+  "name": "@naoki8ster/learnstorybook-design-system",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "build": "cross-env BABEL_ENV=production babel src -d dist",
     "polished": "^4.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -39,7 +40,16 @@
       }
     ]
   },
-  "babel": {},
+  "babel": {
+    "presets": [
+      [
+        "react-app",
+        {
+          "absoluteRuntime": false
+        }
+      ]
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -53,6 +63,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.16.8",
     "@storybook/addon-a11y": "^6.4.10",
     "@storybook/addon-actions": "^6.4.0",
     "@storybook/addon-essentials": "^6.4.0",
@@ -62,7 +73,14 @@
     "@storybook/preset-create-react-app": "^3.2.0",
     "@storybook/react": "^6.4.0",
     "@storybook/testing-library": "^0.0.7",
+    "auto": "^10.32.6",
     "chromatic": "^6.3.4",
+    "cross-env": "^7.0.3",
     "prettier": "^2.5.0"
-  }
+  },
+  "description": "Storybook design system tutorial",
+  "main": "dist/index.js",
+  "repository": "https://github.com/naoki8ster/learnstorybook-design-system",
+  "author": "Naoki Yamazaki <naoki8ster@gmail.com>",
+  "license": "MIT"
 }
